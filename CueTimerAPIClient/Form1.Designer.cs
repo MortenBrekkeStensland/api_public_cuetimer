@@ -51,7 +51,7 @@ namespace CueTimerAPIClient
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(57, 20);
             this.textBoxPort.TabIndex = 0;
-            this.textBoxPort.Text = "4778";
+            this.textBoxPort.Text = "31601";
             // 
             // textBoxCommand
             // 
