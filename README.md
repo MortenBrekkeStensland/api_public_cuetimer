@@ -27,6 +27,9 @@ the end of it (e.g. FireNext$).
  17. `FireTimerWithID`: Start a timer with its id, the id can be passed after `#`, example `FireTimerWithID#1$`, please note that `#` can't be used in timer ID
  18. `CueTimerWithID`: Move next indicator to a timer with its id, the id can be passed after `#`, example `CueTimerWithID#1$`, please note that `#` can't be used in timer ID
  19. `STM`: Togglle Single timer mode
+ 20. `SetDuration`: Set the duration of the active timer to the passed value, format `hh:mm:ss`, example `SetDuration#00:10:00$`
+ 21. `AddXMinutes`: Add minutes to the active timer, example `AddXMinutes#5$` will add 5 minutes
+ 22. `SubXMinutes`: Subtract minutes from the active timer, example `SubXMinutes#5$` will subtract 5 minutes
 
 ### Feedback:
 Once the client is connected to CueTimer it will continuously receive info every 200ms. This will be JSON string that has a `$` as a termination char at the very end.
