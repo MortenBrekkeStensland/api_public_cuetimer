@@ -18,7 +18,7 @@ the end of it (e.g. FireNext$).
  8. `SubMinute`: Subtract 1 minute.
  9. `AddSpeed`: Increase speed by 5%.
  10. `SubSpeed`: Decrease speed by 5%.
- 11. `Fullscreen`: Togglle Fullscreen mode
+ 11. `Fullscreen`: Fullscreen mode
  12. `NDI`: Togglle NDI
  13. `Message`: Togglle Message visibilty
  14. `Clock`: Toggle clock screen
@@ -31,6 +31,17 @@ the end of it (e.g. FireNext$).
  21. `AddXMinutes`: Add minutes to the active timer, example `AddXMinutes#5$` will add 5 minutes
  22. `SubXMinutes`: Subtract minutes from the active timer, example `SubXMinutes#5$` will subtract 5 minutes
  23. `InitList`: Clear the whole list & Create a new timer which has the properties of the Default new timer
+ 24. `Preview`: Preview mode
+ 25. `Presenter`: Presenter mode
+
+#### Output windows commands notes:
+- `Fullscreen`, `Preview`, and `Presenter` commands accept additional parameter that can be passed after `#`
+- accepted values are (`toggle` | `on` | `off`)
+- for backward backward compatibility, CueTimer also supports `undefined` and empty string as a value and they will act as toggle. 
+- Examples: 
+  - `Fullscreen#on$`
+  - `Fullscreen#off$`
+  - `Fullscreen#toggle$`, `Fullscreen$`, and `Fullscreen#undefined$` will act as toggle
 
 ### Feedback:
 Once the client is connected to CueTimer it will continuously receive info every 200ms. This will be JSON string that has a `$` as a termination char at the very end.
@@ -46,6 +57,8 @@ Once the client is connected to CueTimer it will continuously receive info every
   "name": "",
   "endTime": "22:12:37",
   "Fullscreen": false,
+  "Preview": false,
+  "Presenter": false,
   "NDI": false,
   "Message": false,
   "STM": false,
@@ -81,6 +94,8 @@ Once the client is connected to CueTimer it will continuously receive info every
 - `name`: Timer name
 - `endTime`: in ["hh:mm:ss"] format. (send "" if it has no value).
 - `Fullscreen`: State of Fullscreen mode (Boolean)
+- `Preview`: State of Preview mode (Boolean)
+- `Presenter`: State of Presenter mode (Boolean)
 - `NDI`: State of  (Boolean)
 - `Message`: State of Message visibility (Boolean)
 - `STM`: State of Single timer mode (Boolean)
