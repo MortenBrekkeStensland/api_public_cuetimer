@@ -43,11 +43,23 @@ the end of it (e.g. FireNext$).
   - `Fullscreen#off$`
   - `Fullscreen#toggle$`, `Fullscreen$`, and `Fullscreen#undefined$` will act as toggle
 
+#### Target specific list
+  - Add a second parameter to the command to specify the list number.
+  - If the command has no parameters, insert any placeholder as the first parameter e.g. `undefined` or even keep it empty but make sure the `#` splitter is added, then add the list number (The list parameter must always be the second parameter).
+  - If an invalid or missing list parameter is provided, the command will default to the current active list.
+  - Examples:
+    - `AddXMinutes#1#2$`: Adds 1 minute to the active timer in list 2.
+    - `FireNext#undefined#1`: Starts the next timer in list 1.
+    - `FireNext##1`: Starts the next timer in list 1.
+    - `FireNext##`: Starts the next timer in the current active tab/list.
+    - `FireNext##some_invalid_value`: Starts the next timer in the current active tab/list.
+
 ### Feedback:
 Once the client is connected to CueTimer it will continuously receive info every 200ms. This will be JSON string that has a `$` as a termination char at the very end.
 
 ```JSON
 {
+  "list": "1",
   "h": "0",
   "m": "31",
   "s": "8",
@@ -84,7 +96,7 @@ Once the client is connected to CueTimer it will continuously receive info every
 }$
 ```
 
-
+- `list`: The source list from which this feedback is originating.
 - `h`: hours 
 - `m`: minutes 
 - `s`: seconds 
