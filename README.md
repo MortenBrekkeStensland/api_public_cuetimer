@@ -60,6 +60,7 @@ Once the client is connected to CueTimer it will continuously receive info every
 ```JSON
 {
   "list": "1",
+  "lists": ["List 1", "List 2", "List 3"],
   "h": "0",
   "m": "31",
   "s": "8",
@@ -97,6 +98,7 @@ Once the client is connected to CueTimer it will continuously receive info every
 ```
 
 - `list`: The source list from which this feedback is originating.
+- `lists`: Array of all lists names (Without number prefix `1-`, `2-`, ...).
 - `h`: hours 
 - `m`: minutes 
 - `s`: seconds 
