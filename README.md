@@ -46,6 +46,10 @@ the end of it (e.g. FireNext$).
  23. `InitList`: Clear the whole list & Create a new timer which has the properties of the Default new timer
  24. `Preview`: Preview mode
  25. `Presenter`: Presenter mode
+ 26. `select_list`: Links current connection to a list with the given GUID `select_list#7cff78a1-46cf-4a2f-8820-a04cce550726$`.
+ 27. `ActivateNextList`: Switch to the next list
+ 28. `ActivatePreviousList`: Switch to the previous list
+ 29. `ActivateListByGUID`: Activates the list associated with the given GUID `ActivateListByGUID#7cff78a1-46cf-4a2f-8820-a04cce550726$`
 
 #### Output windows commands notes:
 - `Fullscreen`, `Preview`, and `Presenter` commands accept additional parameter that can be passed after `#`
