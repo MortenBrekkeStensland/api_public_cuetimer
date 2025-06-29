@@ -6,6 +6,19 @@ The commands should be sent as an ASCII string with `$` as a termination char at
 the end of it (e.g. FireNext$).
 
 
+### Targeting a Specific List (CueTimer v4+)
+
+- By default, CueTimer uses the currently active list for both commands and feedback.
+- To target a specific list, send the command `select_list#<guid>$`.
+- If the provided GUID is invalid or missing, CueTimer will continue using the active list.
+- You can retrieve available GUIDs from the `lists` feedback.
+- Examples:
+  - `select_list#a926123d-593b-4b53-913c-febeacc06f1c$`: selects the list with the given GUID.
+  - `select_list#$`: uses the active list for routing commands and feedback.
+  - `select_list#some_invalid_guid$`: falls back to the active list.
+
+
+
 ### Commands:
 
  1. `FireNext`
@@ -43,24 +56,28 @@ the end of it (e.g. FireNext$).
   - `Fullscreen#off$`
   - `Fullscreen#toggle$`, `Fullscreen$`, and `Fullscreen#undefined$` will act as toggle
 
-#### Target specific list
-  - Add a second parameter to the command to specify the list number.
-  - If the command has no parameters, insert any placeholder as the first parameter e.g. `undefined` or even keep it empty but make sure the `#` splitter is added, then add the list number (The list parameter must always be the second parameter).
-  - If an invalid or missing list parameter is provided, the command will default to the current active list.
-  - Examples:
-    - `AddXMinutes#1#2$`: Adds 1 minute to the active timer in list 2.
-    - `FireNext#undefined#1`: Starts the next timer in list 1.
-    - `FireNext##1`: Starts the next timer in list 1.
-    - `FireNext##`: Starts the next timer in the current active tab/list.
-    - `FireNext##some_invalid_value`: Starts the next timer in the current active tab/list.
 
 ### Feedback:
 Once the client is connected to CueTimer it will continuously receive info every 200ms. This will be JSON string that has a `$` as a termination char at the very end.
 
 ```JSON
 {
-  "list": "1",
-  "lists": ["List 1", "List 2", "List 3"],
+  "listNumber": "1",
+  "listGUID": "a926123d-593b-4b53-913c-febeacc06f1c",
+  "lists": [
+    {
+        "guid":"a926123d-593b-4b53-913c-febeacc06f1c",
+        "title":"List 1"
+    },
+    {
+        "guid":"7cff78a1-46cf-4a2f-8820-a04cce550726",
+        "title":"List 2"
+    },
+    {
+        "guid":"130b1132-9ea7-4669-97ec-1c3c623e5acd",
+        "title":"List 3"
+    }
+  ],
   "h": "0",
   "m": "31",
   "s": "8",
@@ -97,8 +114,11 @@ Once the client is connected to CueTimer it will continuously receive info every
 }$
 ```
 
-- `list`: The source list from which this feedback is originating.
-- `lists`: Array of all lists names (Without number prefix `1-`, `2-`, ...).
+- `listNumber`: Indicates the list number (e.g., `1`, `2`, etc.) from which the feedback is coming.
+- `listGUID`: The GUID of the list that generated the feedback.
+- `lists`: An array containing all available list objects:
+  - `title`: The name of the list (without any numeric prefix such as `1-`, `2-`, etc.).
+  - `guid`: The unique identifier (GUID) of the list.
 - `h`: hours 
 - `m`: minutes 
 - `s`: seconds 
