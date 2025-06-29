@@ -116,7 +116,7 @@ Once the client is connected to CueTimer it will continuously receive info every
 
 - `listNumber`: Indicates the list number (e.g., `1`, `2`, etc.) from which the feedback is coming.
 - `listGUID`: The GUID of the list that generated the feedback.
-- `lists`: An array containing all available list objects:
+- `lists`: An **ordered** array containing all available list objects:
   - `title`: The name of the list (without any numeric prefix such as `1-`, `2-`, etc.).
   - `guid`: The unique identifier (GUID) of the list.
 - `h`: hours 
