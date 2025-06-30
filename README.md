@@ -71,15 +71,18 @@ Once the client is connected to CueTimer it will continuously receive info every
   "lists": [
     {
         "guid":"a926123d-593b-4b53-913c-febeacc06f1c",
-        "title":"List 1"
+        "title":"List 1",
+        "isActive": false
     },
     {
         "guid":"7cff78a1-46cf-4a2f-8820-a04cce550726",
-        "title":"List 2"
+        "title":"List 2",
+        "isActive": true
     },
     {
         "guid":"130b1132-9ea7-4669-97ec-1c3c623e5acd",
-        "title":"List 3"
+        "title":"List 3",
+        "isActive": false
     }
   ],
   "h": "0",
@@ -123,6 +126,7 @@ Once the client is connected to CueTimer it will continuously receive info every
 - `lists`: An **ordered** array containing all available list objects:
   - `title`: The name of the list (without any numeric prefix such as `1-`, `2-`, etc.).
   - `guid`: The unique identifier (GUID) of the list.
+  - `isActive`: Boolean indicating whether the list is currently active in the UI
 - `h`: hours 
 - `m`: minutes 
 - `s`: seconds 
