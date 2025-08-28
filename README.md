@@ -50,12 +50,12 @@ the end of it (e.g. FireNext$).
  27. `ActivateNextList`: Switch to the next list
  28. `ActivatePreviousList`: Switch to the previous list
  29. `ActivateListByGUID`: Activates the list associated with the given GUID `ActivateListByGUID#7cff78a1-46cf-4a2f-8820-a04cce550726$`
-  30. `MultiviewPreview`: Multiview Preview mode
-  31. `MultiviewFullscreen`: Multiview Fullscreen mode
-  32. `MultiviewNDI`: Toggle Multiview NDI
+  30. `MultitimerPreview`: Multitimer Preview mode
+  31. `MultitimerFullscreen`: Multitimer Fullscreen mode
+  32. `MultitimerNDI`: Toggle Multitimer NDI
 
 #### Output windows commands notes:
-- `Fullscreen`, `Preview`, `Presenter`, `MultiviewPreview`, and `MultiviewFullscreen` commands accept additional parameter that can be passed after `#`
+- `Fullscreen`, `Preview`, `Presenter`, `MultitimerPreview`, and `MultitimerFullscreen` commands accept additional parameter that can be passed after `#`
 - accepted values are (`toggle` | `on` | `off`)
 - for backward backward compatibility, CueTimer also supports `undefined` and empty string as a value and they will act as toggle. 
 - Examples: 
@@ -99,10 +99,10 @@ Once the client is connected to CueTimer it will continuously receive info every
   "Fullscreen": false,
   "Preview": false,
   "Presenter": false,
-  "MultiviewPreview": false,
-  "MultiviewFullscreen": false,
+  "MultitimerPreview": false,
+  "MultitimerFullscreen": false,
   "NDI": false,
-  "MultiviewNDI": false,
+  "MultitimerNDI": false,
   "Message": false,
   "STM": false,
   "Clock": false,
@@ -145,9 +145,9 @@ Once the client is connected to CueTimer it will continuously receive info every
 - `Preview`: State of Preview mode (Boolean)
 - `Presenter`: State of Presenter mode (Boolean)
 - `NDI`: State of  (Boolean)
-- `MultiviewPreview`: State of Multiview Preview mode (Boolean)
-- `MultiviewFullscreen`: State of Multiview Fullscreen mode (Boolean)
-- `MultiviewNDI`: State of Multiview NDI (Boolean)
+- `MultitimerPreview`: State of Multitimer Preview mode (Boolean)
+- `MultitimerFullscreen`: State of Multitimer Fullscreen mode (Boolean)
+- `MultitimerNDI`: State of Multitimer NDI (Boolean)
 - `Message`: State of Message visibility (Boolean)
 - `STM`: State of Single timer mode (Boolean)
 - `Clock`: State of Clock screen (Boolean)
