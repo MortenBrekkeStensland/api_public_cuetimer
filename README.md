@@ -4,8 +4,8 @@ Remote-control and monitor [CueTimer](https://www.cuetimer.com/) from external d
 
 | Protocol | Best for | Direction | Documentation |
 | --- | --- | --- | --- |
-| **TCP** | Full control + live state monitoring (Companion, Crestron, custom web apps) | Two-way: send commands, receive continuous state feedback | [docs/tcp.md](docs/tcp.md) |
-| **OSC** | Triggering cues from show-control software (QLab, Resolume, Mitti) | Two-way: send commands in, receive event triggers out | [docs/osc.md](docs/osc.md) |
+| **TCP** | Full control + live state monitoring (Companion, Crestron, custom web apps) | Two-way: send commands, receive continuous state feedback | [tcp.md](tcp.md) |
+| **OSC** | Triggering cues from show-control software (QLab, Resolume, Mitti) | Two-way: send commands in, receive event triggers out | [osc.md](osc.md) |
 
 ## Which should I use?
 
